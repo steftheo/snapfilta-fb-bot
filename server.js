@@ -10,12 +10,13 @@ if (!port) throw new Error ('PORT is required but missing')
 
 var controller = Botkit.facebookbot({
   access_token: accessToken,
-  verify_token: `sctsnapfilta`
+  verify_token: verifyToken
 })
 
 var bot = controller.spawn()
 
 controller.setupWebserver(port, function (err, webserver) {
+  ca: fs.readFileSync(`facebook/snapfilta`)
   if (err) return console.log(err)
   controller.createWebhookEndpoints(webserver, bot, function () {
     console.log('Ready Player 1')
