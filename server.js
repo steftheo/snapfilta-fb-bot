@@ -10,7 +10,7 @@ if (!port) throw new Error ('PORT is required but missing')
 
 var controller = Botkit.facebookbot({
   access_token: accessToken,
-  verify_token: verifyToken
+  verify_token: `sctsnapfilta`
 })
 
 var bot = controller.spawn()
